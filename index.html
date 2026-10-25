@@ -34,7 +34,7 @@ const menuItems=[
 {id:11,name:'Chocolate Shake',cat:'Drinks',price:300,emoji:'🥤',tag:'SWEET TREAT',desc:'A creamy sweet treat to finish things off.'},
 {id:12,name:'Fries + Drink Combo',cat:'Sides',price:420,emoji:'🍟',tag:'COMBO',desc:'A simple side-and-sip combo.'}
 ];
-const WHATSAPP_NUMBER='923001234567'; // REPLACE with K&Bs WhatsApp number, country code only, no + or spaces.
+const WHATSAPP_NUMBER='03242961664'; // REPLACE with K&Bs WhatsApp number, country code only, no + or spaces.
 let cart=JSON.parse(sessionStorage.getItem('kbsCart')||'{}');let activeCategory='All';
 const money=n=>'Rs. '+Number(n).toLocaleString('en-PK');
 function renderMenu(){const list=menuItems.filter(x=>activeCategory==='All'||x.cat===activeCategory);document.getElementById('menuGrid').innerHTML=list.map(x=>`<article class="food-card reveal show"><div class="food-img"><span class="tag">${x.tag}</span><span aria-hidden="true">${x.emoji}</span></div><div class="food-body"><div class="food-title"><h3>${x.name}</h3><span class="price">${money(x.price)}</span></div><p>${x.desc}</p><button class="add" onclick="addToCart(${x.id})">＋ ADD TO CART</button></div></article>`).join('')}
